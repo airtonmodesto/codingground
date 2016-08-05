@@ -53,13 +53,13 @@ for m in range(len(T)):
         return state
 
 ## This is to equilibrate the system
-    eqSteps = 3000
+    eqSteps = 20000
     config = initialstate(N)
     for i in range(eqSteps):
         mcmove(config, 1.0/T[m])
 
 ## This part does the main calculations and the measurements
-    mcSteps = 3000
+    mcSteps = 20000
     for i in range(mcSteps):
         mcmove(config, 1.0/T[m])   # monte carlo moves
         Ene = calcEnergy(config)        # calculate the energy
